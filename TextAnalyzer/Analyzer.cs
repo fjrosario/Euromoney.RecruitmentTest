@@ -9,9 +9,9 @@ namespace TextAnalyzer
     public class Analyzer
     {
         IEnumerable<string> _negativeWords;
-        public Analyzer()
+        public Analyzer(IEnumerable<string> negativeWords)
         {
-            _negativeWords = new string[] { "swine","bad","nasty","horrible"}.Select(s => s.ToLower());
+            _negativeWords = negativeWords.Select(s => s.ToLower());
         }
 
         public AnalysisResults AnalyzeText(string text)
